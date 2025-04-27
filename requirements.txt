@@ -1,0 +1,10 @@
+flask
+werkzeug
+PyPDF2
+langchain
+langchain-google-genai
+faiss-cpu
+youtube-transcript-api
+python-dotenv
+google-generativeai
+langchain_community

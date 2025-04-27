@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Extracted Information</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            background-color: #f0f4f8;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+        }
+
+        h2 {
+            color: #2d6a8d;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .info-section {
+            margin-bottom: 25px;
+        }
+
+        .info-label {
+            font-weight: bold;
+            color: #2d6a8d;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .info-value {
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .list-item {
+            margin-bottom: 5px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .list-item:before {
+            content: "•";
+            position: absolute;
+            left: 5px;
+            color: #2d6a8d;
+        }
+
+        .home-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #28a745;
+            color: white;
+            font-weight: bold;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: all 0.3s;
+            text-align: center;
+        }
+
+        .home-link:hover {
+            background: #218838;
+        }
+
+        .actions {
+            text-align: center;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Extracted Resume Information</h2>
+        
+        <div class="info-section">
+            <span class="info-label">Name:</span>
+            <div class="info-value">
+                {{ info.first_name }} {{ info.last_name }}
+            </div>
+        </div>
+
+        <div class="info-section">
+            <span class="info-label">Contact Information:</span>
+            <div class="info-value">
+                Email: {{ info.email }}<br>
+                Phone: {{ info.phone }}
+            </div>
+        </div>
+
+        <div class="info-section">
+            <span class="info-label">Current Position:</span>
+            <div class="info-value">
+                {{ info.current_position }} ({{ info.years_of_experience }} years experience)
+            </div>
+        </div>
+
+        <div class="info-section">
+            <span class="info-label">Work Experience Summary:</span>
+            <div class="info-value">
+                {{ info.work_experience_summary }}
+            </div>
+        </div>
+
+        <div class="info-section">
+            <span class="info-label">Education:</span>
+            <div class="info-value">
+                {% for item in info.education %}
+                <div class="list-item">{{ item }}</div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="info-section">
+            <span class="info-label">Skills:</span>
+            <div class="info-value">
+                {% for skill in info.skills %}
+                <div class="list-item">{{ skill }}</div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="actions">
+            <a href="/extract_info" class="home-link">Extract Another Resume</a>
+            <a href="/" class="home-link">Return Home</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Extract Resume Information</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        /* Reuse the same styles as pdf_chat.html */
+        body {
+            background-color: #f0f4f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 600px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #2d6a8d;
+            margin-bottom: 20px;
+        }
+
+        .intro {
+            font-size: 1.1em;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .pdf-form {
+            margin-bottom: 20px;
+        }
+
+        .upload-label {
+            display: block;
+            margin: 10px 0;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .upload-input {
+            width: 100%;
+            padding: 12px;
+            margin-top: 5px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+            transition: border-color 0.3s;
+        }
+
+        .submit-button {
+            padding: 12px 24px;
+            background: #007BFF;
+            color: white;
+            font-weight: bold;
+            border-radius: 6px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .submit-button:hover {
+            background: #0056b3;
+            box-shadow: 0px 4px 6px rgba(0, 123, 255, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .home-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #28a745;
+            color: white;
+            font-weight: bold;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .home-link:hover {
+            background: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Extract Resume Information</h2>
+        <p class="intro">Upload resume PDFs to extract structured information.</p>
+        <form method="post" enctype="multipart/form-data" class="pdf-form">
+            <label for="pdf_files" class="upload-label">Upload Resume PDFs:</label>
+            <input type="file" name="pdf_files" multiple required class="upload-input" accept=".pdf">
+            <button type="submit" class="submit-button">Extract Information</button>
+        </form>
+        <a href="/" class="home-link">Return Home</a>
+    </div>
+</body>
+</html>

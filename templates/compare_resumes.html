@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Resume Comparison</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        .comparison-text {
+            white-space: pre-wrap;
+            text-align: left;
+        }
+        .form-container {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Resume Comparison</h2>
+        <div class="form-container">
+            <form action="{{ url_for('compare') }}" method="post" enctype="multipart/form-data">
+                <input type="file" name="pdf_files" multiple required>
+                <textarea name="user_question" placeholder="Enter your comparison question (e.g., Who is the best candidate for a software engineer role?)" rows="4" cols="50" required></textarea>
+                <input type="submit" value="Compare Resumes">
+            </form>
+        </div>
+        {% if comparison %}
+            <div class="comparison-text">
+                {{ comparison }}
+            </div>
+        {% else %}
+            <p>Please upload at least two resumes and ask a comparison question.</p>
+        {% endif %}
+        <a href="/" class="home-link">Return Home</a>
+    </div>
+</body>
+</html>
