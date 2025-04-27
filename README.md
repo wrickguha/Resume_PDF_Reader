@@ -24,7 +24,7 @@ Resume PDF Reader is a web application built with Flask and Python that leverage
 1.  **Clone the Repository:**
 
     ```bash
-    git clone <https://github.com/wrickguha/Resume_PDF_Reader.git>
+    git clone https://github.com/wrickguha/Resume_PDF_Reader.git
     cd Resume_PDF_Reader
     ```
 
