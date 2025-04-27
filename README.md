@@ -106,6 +106,16 @@ Resume PDF Reader is a web application built with Flask and Python that leverage
 * The `uploads/` directory will be created automatically to store uploaded files.
 * The application uses LangChain and FAISS for efficient question answering and document retrieval.
 
+## Video Description
+
+
+
+
+https://github.com/user-attachments/assets/28fa2edd-62f3-4bc5-8cb2-63dab7c544e3
+
+
+
+
 ## Contributing
 
 You can add contribution guidelines here if you want to encourage others to contribute to your project
